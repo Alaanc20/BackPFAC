@@ -7,9 +7,11 @@
     "build:client": "npm run build --prefix client",
     "build:server": "npm run build --prefix server",
     "start:client": "npm start --prefix client",
-    "start:server": "npm start --prefix server"
+    "start:server": "npm start --prefix server",
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\"",
+    "test": "concurrently \"npm test --prefix client\" \"npm test --prefix server\""
   },
   "devDependencies": {
-    "concurrently": "^6.5.1"
+    "concurrently": "^6.0.0"
   }
 }
